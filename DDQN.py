@@ -7,19 +7,8 @@ from keras.models import Sequential,Model
 from keras.layers import Dense,Conv2D,Flatten,Dropout,MaxPooling2D
 from keras.optimizers import Adam
 import matplotlib.pyplot as plt
-#from gym.wrappers import Monitor
-#from gym import wrappers
-import pyautogui as gui
-import pyscreenshot as ig
 import cv2
 import time
-from keras.models import model_from_json
-json_file = open('model.json', 'r')
-loaded_model_json = json_file.read()
-json_file.close()
-loaded_model = model_from_json(loaded_model_json)
-loaded_model.load_weights("model.h5")
-
 max_ep=200
 train = True
 
@@ -124,8 +113,6 @@ count = 0
 brain = dqnagent()
 learning_start = 10000
 st = time.time()
-#gui.click(179,294)
-#time.sleep(0.1)
 model_saved = False
 if model_saved == True:
     brain.model_load()
